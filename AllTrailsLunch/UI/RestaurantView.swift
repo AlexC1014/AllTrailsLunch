@@ -17,6 +17,7 @@ class RestaurantView: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var interpunctLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var numberOfRatingsLabel: UILabel!
     
     var restaurant: Restaurant?
     
@@ -39,11 +40,13 @@ class RestaurantView: UIView {
         priceLabel.font = UIFont.systemFont(ofSize: 12)
         interpunctLabel.font = UIFont.boldSystemFont(ofSize: 12)
         descriptionLabel.font = UIFont.systemFont(ofSize: 12)
+        numberOfRatingsLabel.font = UIFont.systemFont(ofSize: 12)
         
         nameLabel.textColor = .secondaryLabel
         priceLabel.textColor = .tertiaryLabel
         interpunctLabel.textColor = .tertiaryLabel
         descriptionLabel.textColor = .tertiaryLabel
+        numberOfRatingsLabel.textColor = .tertiaryLabel
     }
     
     func loadViewFromNib() -> UIView? {
@@ -85,6 +88,14 @@ class RestaurantView: UIView {
             } else {
                 imageView.image = UIImage(systemName: "star.fill")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
             }
+        }
+        
+        if let numRatings = restaurant.ratingCount {
+            numberOfRatingsLabel.isHidden = false
+            numberOfRatingsLabel.text = "(\(numRatings))"
+        } else {
+            numberOfRatingsLabel.text = ""
+            numberOfRatingsLabel.isHidden = true
         }
         
     }

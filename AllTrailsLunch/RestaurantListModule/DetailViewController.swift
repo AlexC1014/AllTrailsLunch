@@ -27,6 +27,5 @@ class DetailViewController: UIViewController {
             nameLabel.text = location.name
             addressLabel.text = location.address ?? location.vicinity
         }
-        
     }
 }

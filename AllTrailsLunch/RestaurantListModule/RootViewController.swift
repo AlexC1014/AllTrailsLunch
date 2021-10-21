@@ -49,13 +49,11 @@ class RootViewController: UIViewController {
         bindViewModel()
         addChildVC(RestaurantListViewController(delegate: self))
         
-        // Handle locations
-        locationManager.delegate = self
-        
         toggleViewButton.addTarget(self, action: #selector(toggleView), for: .touchUpInside)
         toggleViewButton.layer.cornerRadius = 8
         addSearchBar()
         
+        locationManager.delegate = self
         if locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
         } else {
@@ -178,6 +176,8 @@ class RootViewController: UIViewController {
     }
 }
 
+//MARK: TableView and MkMapView data source/delegates for child view controllers
+
 extension RootViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell") as? RestaurantTableViewCell else {
@@ -269,6 +269,8 @@ extension RootViewController: CLLocationManagerDelegate {
         }
     }
 }
+
+//MARK: Behavior driving protocols and functionality adding extensions
 
 protocol ChildViewController: UIViewController {
     func reloadData()

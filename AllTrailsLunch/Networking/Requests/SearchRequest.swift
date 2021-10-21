@@ -22,14 +22,6 @@ class SearchRequest: Request {
     }
     
     func decode(data: Data) throws -> [Restaurant] {
-        
-                do {
-                    let res = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    print(res)
-                } catch {
-                    //Do nothig
-                }
-        
         let decoder = JSONDecoder()
         let response = try decoder.decode(PlacesResponse.self, from: data)
         return response.results

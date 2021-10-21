@@ -14,6 +14,7 @@
                 <outlet property="imageView" destination="Xyc-gu-51h" id="aXY-4t-M7C"/>
                 <outlet property="interpunctLabel" destination="PVY-pD-oqm" id="VQH-Zo-BZ4"/>
                 <outlet property="nameLabel" destination="H8z-ko-uml" id="JYx-QN-8uz"/>
+                <outlet property="numberOfRatingsLabel" destination="f6P-dS-Je3" id="POZ-nD-Pm7"/>
                 <outlet property="priceLabel" destination="XcG-9g-mlL" id="gcD-1l-X7U"/>
                 <outlet property="ratingView" destination="OHe-3r-Hh7" id="i0Q-C8-Dyp"/>
             </connections>
@@ -109,6 +110,12 @@
                         <constraint firstAttribute="width" constant="80" id="vt2-eh-NNR"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-dS-Je3">
+                    <rect key="frame" x="210" y="89.5" width="41.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -119,6 +126,9 @@
                 <constraint firstItem="TJJ-07-Ckp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Uch-Sv-Fc0"/>
                 <constraint firstItem="TJJ-07-Ckp" firstAttribute="leading" secondItem="Xyc-gu-51h" secondAttribute="trailing" constant="8" id="W2f-0K-8k8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TJJ-07-Ckp" secondAttribute="trailing" constant="8" id="aCx-k3-0sF"/>
+                <constraint firstItem="f6P-dS-Je3" firstAttribute="centerY" secondItem="OHe-3r-Hh7" secondAttribute="centerY" id="bf2-yc-Fbp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f6P-dS-Je3" secondAttribute="trailing" constant="4" id="ey4-D0-BxM"/>
+                <constraint firstItem="f6P-dS-Je3" firstAttribute="leading" secondItem="UdE-qV-kmA" secondAttribute="trailing" constant="4" id="ox0-fY-i9l"/>
                 <constraint firstItem="Xyc-gu-51h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="q36-hN-MWR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xyc-gu-51h" secondAttribute="bottom" constant="4" id="rbf-rX-jHg"/>
                 <constraint firstItem="TJJ-07-Ckp" firstAttribute="centerY" secondItem="Xyc-gu-51h" secondAttribute="centerY" id="we1-A3-e3A"/>
