@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z0L-yB-94Z">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="AllTrailsLunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U02-7q-D8L">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMc-ZC-QKi">
-                                <rect key="frame" x="157" y="778" width="100" height="42"/>
+                                <rect key="frame" x="164" y="808" width="100" height="42"/>
                                 <color key="backgroundColor" name="AllTrailsGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="A6o-uC-WeW"/>
@@ -57,31 +57,39 @@
             <objects>
                 <viewController id="emb-1Y-TGM" customClass="DetailViewController" customModule="AllTrailsLunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kmy-H8-HTR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QM0-IU-OTv">
-                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="285.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QM0-IU-OTv" secondAttribute="height" multiplier="3/2" id="3pL-rL-Red"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqh-KO-fuW" userLabel="Name Label">
-                                <rect key="frame" x="8" y="372" width="398" height="20.5"/>
+                                <rect key="frame" x="8" y="381.33333333333331" width="412" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur2-cK-CCD" userLabel="Address Label">
-                                <rect key="frame" x="8" y="400.5" width="398" height="20.5"/>
+                                <rect key="frame" x="8" y="409.66666666666669" width="412" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mII-ho-Y9D">
+                                <rect key="frame" x="160.66666666666666" y="440" width="106.99999999999997" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mII-ho-Y9D" secondAttribute="height" id="z2D-z3-WTU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Zs-Gy-15q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mII-ho-Y9D" firstAttribute="top" secondItem="Ur2-cK-CCD" secondAttribute="bottom" constant="10" id="Acw-0j-vSZ"/>
+                            <constraint firstItem="mII-ho-Y9D" firstAttribute="centerX" secondItem="6Zs-Gy-15q" secondAttribute="centerX" id="Di5-9J-68s"/>
                             <constraint firstItem="6Zs-Gy-15q" firstAttribute="trailing" secondItem="Rqh-KO-fuW" secondAttribute="trailing" constant="8" id="FEU-Mn-zhs"/>
                             <constraint firstItem="6Zs-Gy-15q" firstAttribute="trailing" secondItem="Ur2-cK-CCD" secondAttribute="trailing" constant="8" id="R2S-IX-w1q"/>
                             <constraint firstItem="Ur2-cK-CCD" firstAttribute="top" secondItem="Rqh-KO-fuW" secondAttribute="bottom" constant="8" id="VIk-o0-9mD"/>
@@ -89,6 +97,7 @@
                             <constraint firstItem="Rqh-KO-fuW" firstAttribute="top" secondItem="QM0-IU-OTv" secondAttribute="bottom" constant="8" id="YbL-SH-Xnb"/>
                             <constraint firstItem="Ur2-cK-CCD" firstAttribute="leading" secondItem="6Zs-Gy-15q" secondAttribute="leading" constant="8" id="brO-hO-YWY"/>
                             <constraint firstItem="Rqh-KO-fuW" firstAttribute="leading" secondItem="6Zs-Gy-15q" secondAttribute="leading" constant="8" id="g3P-kV-OGR"/>
+                            <constraint firstItem="mII-ho-Y9D" firstAttribute="width" secondItem="6Zs-Gy-15q" secondAttribute="width" multiplier="1/4" id="gPG-xq-fFb"/>
                             <constraint firstItem="QM0-IU-OTv" firstAttribute="leading" secondItem="6Zs-Gy-15q" secondAttribute="leading" id="lOI-YP-Fqp"/>
                             <constraint firstItem="6Zs-Gy-15q" firstAttribute="trailing" secondItem="QM0-IU-OTv" secondAttribute="trailing" id="nxs-rV-62N"/>
                         </constraints>
@@ -110,7 +119,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z0L-yB-94Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PD8-Al-8PL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -125,6 +134,7 @@
     </scenes>
     <resources>
         <image name="ButtonMap" width="28" height="34"/>
+        <image name="Logo" width="39" height="30"/>
         <namedColor name="AllTrailsGreen">
             <color red="0.25900000333786011" green="0.54100000858306885" blue="0.075000002980232239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
