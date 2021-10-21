@@ -1,0 +1,1081 @@
+Optional(["next_page_token": Aap_uECidN0eIlT5BUq9GebSjJkhPwFUqOq2hG3LNJwJvE1HXG00FeF-YcbFNa2iyMhkwcSF5EKlcz0rILvxN2fDOjjLaL6gcNr9THYCV7Thx2a5Qi1TZtk4TfHfW_SGLcip0QVi-O4OKO_I_RPLGLuOCPVT4CXj2qCp7EBxWCooyaZZ2c5VmFASmflmH6Lgb0Tjpp6axCxvdLJGlefFKW69m6ImDhfMOFKEN9yggqALTyh2CuntOJoj9nPW4WEQgSiDtdGCqqEwuxT-gsHSZl7-8BUdtu8F4Ml-fI1OIIVu5bsm4nGhAGj8UihAwwv8a4m9oSDA3WRqJVbzh4bxpTMBgeJLUdoPE71pq7M4wB2-lNxaYevsbwb_EUOVgLqmMhfeCTBrDL2ddUlq5prutvsD3vQ3K6hXuMhYopvv4IbUI7xTCqoi8ozVgwbdQpex, "results": <__NSArrayI 0x600000904370>(
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3313217";
+                lng = "-122.0317877";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3326108302915";
+                    lng = "-122.0306303697085";
+                };
+                southwest =             {
+                    lat = "37.3299128697085";
+                    lng = "-122.0333283302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "BJ's Restaurant & Brewhouse";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3024;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/104506279021249480336\">BJ&#39;s Restaurant &amp; Brewhouse</a>"
+            );
+            "photo_reference" = "Aap_uEBtb0WS2HRE549hj3SAv4dID56PKO0W0ujzyQPtHksyDQnYPu0M7PnLcB9WMASSIG-AcClcKCZkgxggKIsr9E0QZ2EmM11noU47fnm-Ct0p5SJFKM062RwfpipLmDXctq0tCLIF612a3DDBdIZPHu28KpxJvbZf7nnffQ_q2BsrGWVw";
+            width = 4032;
+        }
+        );
+        "place_id" = ChIJM75zpLa1j4ARd8IiWxkW30g;
+        "plus_code" =     {
+            "compound_code" = "8XJ9+G7 Cupertino, CA, USA";
+            "global_code" = "849V8XJ9+G7";
+        };
+        "price_level" = 2;
+        rating = 4;
+        reference = ChIJM75zpLa1j4ARd8IiWxkW30g;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        bar,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 1978;
+        vicinity = "10690 North De Anza Boulevard, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3368353";
+                lng = "-122.0228153";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3382881302915";
+                    lng = "-122.0214664197085";
+                };
+                southwest =             {
+                    lat = "37.3355901697085";
+                    lng = "-122.0241643802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Gochi Cupertino";
+        "opening_hours" =     {
+            "open_now" = 0;
+        };
+        photos =     (
+        {
+            height = 3024;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/114228685047831593501\">Allen Reyes</a>"
+            );
+            "photo_reference" = "Aap_uEAhb0RA0dXYNpGYfmdfQ8lGOiIOKEVPU3gATJb4O8auZkH5-tsO_OTtlef7S01X2BHL1ZXLfMsvgiGvD4Bp9uqXbwCqCtias2Bnltf8uD2eLp2ou5-NZKdc1Pv6Ht4ryozS20_aKleeZ28_3TflXWzZY7fpZjEO88UNhq3lwT3IWn29";
+            width = 4032;
+        }
+        );
+        "place_id" = "ChIJ50EYjse1j4ARQAvOtT-s7_g";
+        "plus_code" =     {
+            "compound_code" = "8XPG+PV Cupertino, CA, USA";
+            "global_code" = "849V8XPG+PV";
+        };
+        "price_level" = 3;
+        rating = "4.4";
+        reference = "ChIJ50EYjse1j4ARQAvOtT-s7_g";
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 749;
+        vicinity = "19980 Homestead Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.33629559999999";
+                lng = "-122.0403964";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3376394802915";
+                    lng = "-122.0391104697085";
+                };
+                southwest =             {
+                    lat = "37.3349415197085";
+                    lng = "-122.0418084302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png";
+        "icon_background_color" = "#7B9EB0";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet";
+        name = "Homestead Bowl & The X Bar";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 563;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/116035057109427838807\">Homestead Bowl &amp; The X Bar</a>"
+            );
+            "photo_reference" = "Aap_uECUkSo4rWTWBhQF2y0r3Xp9e-QVZernpR2WWOF0SgiwE_AW93BMfhRs8SA7D7FwVc3deM34PFIZMLJVizqBvdRhP-09Oc4bng44bZDIQ-HfVLgqOxfajCe1ptQo21pyHfk_m725LBX1pNTN8J4kEQQ0KokVGhgVTVAQ37Y-_gI4xpuA";
+            width = 1000;
+        }
+        );
+        "place_id" = "ChIJ3cDxjjS0j4AR80J_Bj4Jh3I";
+        "plus_code" =     {
+            "compound_code" = "8XP5+GR Cupertino, CA, USA";
+            "global_code" = "849V8XP5+GR";
+        };
+        rating = "3.9";
+        reference = "ChIJ3cDxjjS0j4AR80J_Bj4Jh3I";
+        scope = GOOGLE;
+        types =     (
+        "bowling_alley",
+        "night_club",
+        bar,
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 991;
+        vicinity = "20990 Homestead Road, Cupertino";
+    },
+    {
+        "business_status" = "CLOSED_TEMPORARILY";
+        geometry =     {
+            location =         {
+                lat = "37.3371218";
+                lng = "-122.0402826";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.33856023029149";
+                    lng = "-122.0389809197085";
+                };
+                southwest =             {
+                    lat = "37.3358622697085";
+                    lng = "-122.0416788802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = Subway;
+        "permanently_closed" = 1;
+        photos =     (
+        {
+            height = 1080;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/114331261903817412421\">Ignasi Mas</a>"
+            );
+            "photo_reference" = "Aap_uECSDus_ENWAa8TpP5QOTyAGWPRTSDFBmiJUVTj45MTh7K-hT-ougsyp7XThwNS6ACbUAbglu4R5mEWEpao3E_uz3Daq_AgvJqXuf8X3XPT1Fy_bSrviku8CUSUCr9vprWRQmnmRT_KDqGOboMUGACIf-KIlxlrmo0DoF8hoUNde5MfD";
+            width = 1920;
+        }
+        );
+        "place_id" = ChIJ0VWcnTS0j4ARHjdZ79VZotQ;
+        "plus_code" =     {
+            "compound_code" = "8XP5+RV Cupertino, CA, USA";
+            "global_code" = "849V8XP5+RV";
+        };
+        "price_level" = 1;
+        rating = "3.6";
+        reference = ChIJ0VWcnTS0j4ARHjdZ79VZotQ;
+        scope = GOOGLE;
+        types =     (
+        "meal_takeaway",
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 33;
+        vicinity = "20916 Homestead Road Unit E, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.322629";
+                lng = "-122.040961";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3239886802915";
+                    lng = "-122.0395658197085";
+                };
+                southwest =             {
+                    lat = "37.3212907197085";
+                    lng = "-122.0422637802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Ike's Love & Sandwiches";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3036;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/113463850398855294560\">Mini Rag</a>"
+            );
+            "photo_reference" = "Aap_uEDffCqPusASqy2kJz73r2HzVrfcy3p3xeS608FkGAblOsnlh7JqbUMO_wO_zCQH9S-XxBJ8xzl6aYY-JnSGF2iFzOyPC2JLg5BF5ihxho_63DYL4a4DAK8znK_sO281w456HvWDyONUG9L9JHIVSRnimQ_XTRfGh6W14zFo3SyjjeAa";
+            width = 4048;
+        }
+        );
+        "place_id" = ChIJyerOgVK0j4ARaLZmYsYjYv0;
+        "plus_code" =     {
+            "compound_code" = "8XF5+3J Cupertino, CA, USA";
+            "global_code" = "849V8XF5+3J";
+        };
+        "price_level" = 2;
+        rating = "4.4";
+        reference = ChIJyerOgVK0j4ARaLZmYsYjYv0;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 717;
+        vicinity = "21000 Stevens Creek Boulevard Ste 100, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3236364";
+                lng = "-122.0192141";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3249184802915";
+                    lng = "-122.0177675697085";
+                };
+                southwest =             {
+                    lat = "37.3222205197085";
+                    lng = "-122.0204655302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png";
+        "icon_background_color" = "#7B9EB0";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet";
+        name = "Chuck E. Cheese";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 1000;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/106134372693959042841\">Chuck E. Cheese</a>"
+            );
+            "photo_reference" = "Aap_uEB_eeRe3N26K4bKwY6LL9jyixY11f0XLZSaY-ObdY37OAPPMLLazroZa_xxRDXzzJJdzTT71VG5BpamVSpX2hmWUPsUUqkYlYlzJ3UhJbmyhno-41ek_xGh9KSyUY4IqgI0TtN9tlYhPrs38WexOrjz2RseHsRKkGsdPPF3-dRH5Rwt";
+            width = 1778;
+        }
+        );
+        "place_id" = ChIJE82BdaG1j4ARl9hy5NU5fkw;
+        "plus_code" =     {
+            "compound_code" = "8XFJ+F8 Cupertino, CA, USA";
+            "global_code" = "849V8XFJ+F8";
+        };
+        "price_level" = 2;
+        rating = "4.1";
+        reference = ChIJE82BdaG1j4ARl9hy5NU5fkw;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 634;
+        vicinity = "19805 Stevens Creek Boulevard, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.33678599999999";
+                lng = "-122.036405";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.33812573029149";
+                    lng = "-122.0349718697085";
+                };
+                southwest =             {
+                    lat = "37.3354277697085";
+                    lng = "-122.0376698302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet";
+        name = Starbucks;
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3024;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/100904401140251728434\">Alex Hsieh</a>"
+            );
+            "photo_reference" = "Aap_uECkeiL5xzw_w1YVuzUgP0g55vAW08dyWvKuVeVj5gzmM71iiSN1OsYLsJtRXp8lsqzdRmz8_xohVl_gR1g58gd_1s_P-7FWyaNidQ0OLaqbAodvVRiRYDKsZhrjtSAi6p42iK0DVHT-tPsp08BdPRtUI7oOkVc7eFVgnvBG40OMvi5U";
+            width = 4032;
+        }
+        );
+        "place_id" = ChIJTxPimDO0j4AR7hO5EjVjlGI;
+        "plus_code" =     {
+            "compound_code" = "8XP7+PC Cupertino, CA, USA";
+            "global_code" = "849V8XP7+PC";
+        };
+        "price_level" = 2;
+        rating = 4;
+        reference = ChIJTxPimDO0j4AR7hO5EjVjlGI;
+        scope = GOOGLE;
+        types =     (
+        cafe,
+        restaurant,
+        food,
+        "point_of_interest",
+        store,
+        establishment
+        );
+        "user_ratings_total" = 284;
+        vicinity = "20676 West Homestead Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3220694";
+                lng = "-122.0317328";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3234150302915";
+                    lng = "-122.0306073697085";
+                };
+                southwest =             {
+                    lat = "37.3207170697085";
+                    lng = "-122.0333053302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Park Place";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 1080;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/108819977675690923885\">JC</a>"
+            );
+            "photo_reference" = "Aap_uEArImJOp83UvphaejmXfJEa5y4vsQRPXC05YFJdRXUZLJIP_siS_IDx1tVqjLXJTBFXhcy_4skXWI5psAP8Y9ng2_4b4TBys3Mbxjjdb2o4QHmGGXMvwjslJvykcuBkLzfjf8A1rfsRJL3LTcmaNBUKjidN5TiwvhAy9UIKjVhsSYgg";
+            width = 1920;
+        }
+        );
+        "place_id" = "ChIJ3R3vm661j4ARlf6j9PRE_P8";
+        "plus_code" =     {
+            "compound_code" = "8XC9+R8 Cupertino, CA, USA";
+            "global_code" = "849V8XC9+R8";
+        };
+        "price_level" = 2;
+        rating = "4.1";
+        reference = "ChIJ3R3vm661j4ARlf6j9PRE_P8";
+        scope = GOOGLE;
+        types =     (
+        "night_club",
+        bar,
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 59;
+        vicinity = "10050 South De Anza Boulevard, Cupertino";
+    },
+    {
+        "business_status" = "CLOSED_TEMPORARILY";
+        geometry =     {
+            location =         {
+                lat = "37.3224482";
+                lng = "-122.0312611";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3239884802915";
+                    lng = "-122.0298388197085";
+                };
+                southwest =             {
+                    lat = "37.3212905197085";
+                    lng = "-122.0325367802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Le Boulanger";
+        "permanently_closed" = 1;
+        photos =     (
+        {
+            height = 2448;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/113297239696668007704\">George Saghafian-Real Estate</a>"
+            );
+            "photo_reference" = "Aap_uED0rlERHHM__A7ycPUIK4ELiAj5OGYKpEfPut_JVlj8TtGxUqAqdCau6Mb4WQ7le8bHBMUCcs_PB3Tf2Q_Yd67SmyrAelFNgBg4-7hhg-81RT9FIyWxpkphS_KWIqrIShsGiE1r1C966ID9R4YHfrnjVNuvPygDVKZaK1SM4JYWC_Dw";
+            width = 3264;
+        }
+        );
+        "place_id" = ChIJnUjdK6m1j4ARgboPsu46fCc;
+        "plus_code" =     {
+            "compound_code" = "8XC9+XF Cupertino, CA, USA";
+            "global_code" = "849V8XC9+XF";
+        };
+        rating = 4;
+        reference = ChIJnUjdK6m1j4ARgboPsu46fCc;
+        scope = GOOGLE;
+        types =     (
+        bakery,
+        restaurant,
+        food,
+        "point_of_interest",
+        store,
+        establishment
+        );
+        "user_ratings_total" = 337;
+        vicinity = "20488 Stevens Creek Boulevard, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.33678";
+                lng = "-122.0403913";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3381191302915";
+                    lng = "-122.0391065697085";
+                };
+                southwest =             {
+                    lat = "37.3354211697085";
+                    lng = "-122.0418045302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Shanghai Garden";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3024;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/109849026903893201606\">Jayasimha Nuggehalli</a>"
+            );
+            "photo_reference" = "Aap_uEB8inuO-C0vgecCx5zCL3z8Vih4XkvmGnSm1EeJzdCk_kTVBARf5q5XsXlexlrmcv9PUV-rNYHLjqSvOfZXP0wByoXNuZTOd545FW3T0byEa4Sr-072_SqvY-lG8gckg4Fd3AYk4MY12djJhM94X8pMOpmLhBx2EHitmlr8tmLlDbdG";
+            width = 4032;
+        }
+        );
+        "place_id" = "ChIJKYAPjjS0j4ARbWD_xU1B2gA";
+        "plus_code" =     {
+            "compound_code" = "8XP5+PR Cupertino, CA, USA";
+            "global_code" = "849V8XP5+PR";
+        };
+        "price_level" = 2;
+        rating = 4;
+        reference = "ChIJKYAPjjS0j4ARbWD_xU1B2gA";
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 344;
+        vicinity = "20956 Homestead Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3246298";
+                lng = "-122.0347293";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3260729802915";
+                    lng = "-122.0332371697085";
+                };
+                southwest =             {
+                    lat = "37.32337501970851";
+                    lng = "-122.0359351302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Lei Garden";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3000;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/113463850398855294560\">Mini Rag</a>"
+            );
+            "photo_reference" = "Aap_uEBla5wJrqqjegdSP_480rEXbw0VP5zXdCsUbmnNQZwOS61_NGYDWWEA9dpIXvwXtsmhfJTe9hvxFyURsoQv7PohdKRsVVXqoajA26MI6bH5dyJwN-OyZw-TAqSVXS5eFaIrqt3in0fIirsIyQ9aQ5ruLw3v21kJkipatUvAAAAivJCR";
+            width = 4000;
+        }
+        );
+        "place_id" = ChIJByeXebK1j4ARpEboD1Ouz1A;
+        "plus_code" =     {
+            "compound_code" = "8XF8+V4 Cupertino, CA, USA";
+            "global_code" = "849V8XF8+V4";
+        };
+        "price_level" = 2;
+        rating = "4.1";
+        reference = ChIJByeXebK1j4ARpEboD1Ouz1A;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 819;
+        vicinity = "10125 Bandley Drive, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.338943";
+                lng = "-122.042556";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3403177802915";
+                    lng = "-122.0410405197085";
+                };
+                southwest =             {
+                    lat = "37.3376198197085";
+                    lng = "-122.0437384802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = Wingstop;
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 2448;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/113929993296898529562\">Mr P. Asadov</a>"
+            );
+            "photo_reference" = "Aap_uEC6T5ac3TjDUVCGRm1CewNvm750rfi08NqOCn9HOuSX059XETtMAmqcKa8lP_W9HHdO7MdT3gKkX35kE_Y_1YPZvFNaKw7dIfnTzi7ZDRMKCf7Qf4BQAJuXG8txpOJlekczh4PBIcxZ2H1ZoedOa3hodAX1Zwc8XaZvryd94WxPQOXt";
+            width = 3264;
+        }
+        );
+        "place_id" = ChIJB0W3rjO0j4AR8J01OtUHNT4;
+        "plus_code" =     {
+            "compound_code" = "8XQ4+HX Sunnyvale, CA, USA";
+            "global_code" = "849V8XQ4+HX";
+        };
+        "price_level" = 2;
+        rating = "3.6";
+        reference = ChIJB0W3rjO0j4AR8J01OtUHNT4;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 223;
+        vicinity = "1661 Hollenbeck Avenue, Sunnyvale";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.33723000000001";
+                lng = "-122.0410278";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.33846478029151";
+                    lng = "-122.0396720697085";
+                };
+                southwest =             {
+                    lat = "37.33576681970851";
+                    lng = "-122.0423700302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "McDonald's";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3456;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/112707543299487936621\">David Bekel</a>"
+            );
+            "photo_reference" = "Aap_uEA5xZA39XGI6BYgVNiEvBgam9W5066rWPHe-nb7AUusiNaO889geZo1qxwz9rQPLN2feA_CQpTGVcj_a4FPJNL6gZfinJfcPJURXPv8HuCLWG443u5VTLd1yiXhB7VapPRhoMD3E2ou8IY6rhJMRGx2qNTKHlIyXzH5FGOPtbAKuicN";
+            width = 4608;
+        }
+        );
+        "place_id" = "ChIJAx0KfzO0j4ARt-lmK5GE_eI";
+        "plus_code" =     {
+            "compound_code" = "8XP5+VH Cupertino, CA, USA";
+            "global_code" = "849V8XP5+VH";
+        };
+        "price_level" = 1;
+        rating = "3.9";
+        reference = "ChIJAx0KfzO0j4ARt-lmK5GE_eI";
+        scope = GOOGLE;
+        types =     (
+        cafe,
+        restaurant,
+        food,
+        "point_of_interest",
+        store,
+        establishment
+        );
+        "user_ratings_total" = 821;
+        vicinity = "10990 North Stelling Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.33723760000001";
+                lng = "-122.0228768";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3386753302915";
+                    lng = "-122.0214691197085";
+                };
+                southwest =             {
+                    lat = "37.3359773697085";
+                    lng = "-122.0241670802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "212 New York Pizza";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 2058;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/109849026903893201606\">Jayasimha Nuggehalli</a>"
+            );
+            "photo_reference" = "Aap_uEAFNrS8bxyhmdbRvpng-SPxHvnoW2cHclnhH0X2ldnP-JBp1qNg28k12iUEBH6zoB0UvOO_W13UF17uGMScTnDqlQU1ogpae37l3NihaWdoQeNEDjV0RaoBy_wUOubaZiXx2zZC55grIijCU2kWsdrELqPneFpygHufPIBi88WL57E3";
+            width = 2693;
+        }
+        );
+        "place_id" = ChIJiYkVmbi1j4ARs6ocdExoJ5Q;
+        "plus_code" =     {
+            "compound_code" = "8XPG+VR Cupertino, CA, USA";
+            "global_code" = "849V8XPG+VR";
+        };
+        "price_level" = 2;
+        rating = "4.3";
+        reference = ChIJiYkVmbi1j4ARs6ocdExoJ5Q;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 136;
+        vicinity = "19998 Homestead Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3349404";
+                lng = "-122.0148164";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3362938302915";
+                    lng = "-122.0136359197085";
+                };
+                southwest =             {
+                    lat = "37.3335958697085";
+                    lng = "-122.0163338802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet";
+        name = "Duke of Edinburgh";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 2268;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/111475692891326444098\">Jim Wilson</a>"
+            );
+            "photo_reference" = "Aap_uEADpd_ZWtmzPFpOAu2ZcyDCJRRy-edkelaotYkwRObtc28s5Zn5Z__vx56wN7SbZMyV8PXugLxNyLOnBesWCCHbCLfsk_sOAOk_rKmskpu3H6v9CymuuHiyyuOGC008Hy6s0cjPLVxTlIHwf0TnxJw10L311KFE8RlurJk4uGqj5gPZ";
+            width = 4032;
+        }
+        );
+        "place_id" = ChIJ5cDDPpa1j4ARj2v92aO3LRc;
+        "plus_code" =     {
+            "compound_code" = "8XMP+X3 Cupertino, CA, USA";
+            "global_code" = "849V8XMP+X3";
+        };
+        "price_level" = 2;
+        rating = "4.2";
+        reference = ChIJ5cDDPpa1j4ARj2v92aO3LRc;
+        scope = GOOGLE;
+        types =     (
+        bar,
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 445;
+        vicinity = "10801 North Wolfe Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3232102";
+                lng = "-122.0380568";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3246056302915";
+                    lng = "-122.0365816697085";
+                };
+                southwest =             {
+                    lat = "37.3219076697085";
+                    lng = "-122.0392796302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet";
+        name = "Panera Bread";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3024;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/106970805592049972029\">Ramesh H</a>"
+            );
+            "photo_reference" = "Aap_uEApMRxm96ApVCR7fM7Xh7zxgV3lnRv1V8iPrci2PCMl8OCKWXY8tUuj2ANDtfVbIfIgSJ1ekoCcGZdkIdnJ3DwA_OSjub9QY4QTaomynZW9ZF7TIcvGwK_1XIRzmhSHvzPYSDzv0sJiG24rDXwputiVnbJveB_cfBcLRK8MqE0f9MvH";
+            width = 4032;
+        }
+        );
+        "place_id" = "ChIJXYBlVK21j4AR_BxhsjxRF5w";
+        "plus_code" =     {
+            "compound_code" = "8XF6+7Q Cupertino, CA, USA";
+            "global_code" = "849V8XF6+7Q";
+        };
+        "price_level" = 2;
+        rating = "4.2";
+        reference = "ChIJXYBlVK21j4AR_BxhsjxRF5w";
+        scope = GOOGLE;
+        types =     (
+        cafe,
+        bakery,
+        "meal_takeaway",
+        restaurant,
+        food,
+        "point_of_interest",
+        store,
+        establishment
+        );
+        "user_ratings_total" = 547;
+        vicinity = "20807 Stevens Creek Boulevard #100, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.338901";
+                lng = "-122.042545";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3402332302915";
+                    lng = "-122.0410295197085";
+                };
+                southwest =             {
+                    lat = "37.3375352697085";
+                    lng = "-122.0437274802915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Round Table Pizza";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 2418;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/109849026903893201606\">Jayasimha Nuggehalli</a>"
+            );
+            "photo_reference" = "Aap_uECAOFWEMX2-7pHTIah5oNZBrBbFuyC5Yrqf88MMS0lhHgomc7reQeBuzzoAC7Loec4MCX510h2xaxNlQOFnFukyt3uFB7OE-rLK20cbK-u2PhmjSSKhu4gxUb2jnMIKkagGM_o8jjQJqaTfjU6A8oaVG5nkKElCu5Gqo6GjKwPe6I2A";
+            width = 3281;
+        }
+        );
+        "place_id" = ChIJ12i3rjO0j4ARUNn1LBoKmzQ;
+        "plus_code" =     {
+            "compound_code" = "8XQ4+HX Sunnyvale, CA, USA";
+            "global_code" = "849V8XQ4+HX";
+        };
+        "price_level" = 2;
+        rating = "3.1";
+        reference = ChIJ12i3rjO0j4ARUNn1LBoKmzQ;
+        scope = GOOGLE;
+        types =     (
+        "meal_delivery",
+        "meal_takeaway",
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 94;
+        vicinity = "1663 Hollenbeck Avenue, Sunnyvale";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3236198";
+                lng = "-122.0298004";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3246547302915";
+                    lng = "-122.0284537697085";
+                };
+                southwest =             {
+                    lat = "37.3219567697085";
+                    lng = "-122.0311517302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Lee's Sandwiches";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 3024;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/109849026903893201606\">Jayasimha Nuggehalli</a>"
+            );
+            "photo_reference" = "Aap_uECZr4NSohQJdh7tchQK2avW-P5TwYz9JdOFdOU3mo5lUdIFXQDKmOPiH76lsJq55XftKwNhgQMUx5-jRbvc53q0v3ICT3d_nV2is3APTsJ71rtE6pBrRBZ2YoLA9GO2Me23UBLCA_-uMmiT2-Q9JOxX3FrEcQb-mzhPEy0TOic-VD-L";
+            width = 4032;
+        }
+        );
+        "place_id" = "ChIJs2gp_a61j4ARlaocuEHWYBM";
+        "plus_code" =     {
+            "compound_code" = "8XFC+C3 Cupertino, CA, USA";
+            "global_code" = "849V8XFC+C3";
+        };
+        "price_level" = 1;
+        rating = "4.2";
+        reference = "ChIJs2gp_a61j4ARlaocuEHWYBM";
+        scope = GOOGLE;
+        types =     (
+        "meal_takeaway",
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 269;
+        vicinity = "20363 Stevens Creek Boulevard, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.33660750000001";
+                lng = "-122.0364217";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3379645802915";
+                    lng = "-122.0349803697085";
+                };
+                southwest =             {
+                    lat = "37.3352666197085";
+                    lng = "-122.0376783302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Fish's Wild";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 1080;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/114331261903817412421\">Ignasi Mas</a>"
+            );
+            "photo_reference" = "Aap_uEC4mJhsmzGr8sR9JNScLTLMeQHknUB9GZd7RfjSyNs1LF8VhXVgyKK-SYV3dkItq56BhUR7neBBAuaASP6OHz8_Bgj7Ht-3QoMg78MHlEVRbnrI9i0MOOKMFKFFH-lrQNO5JJmPCaMhjdyLQyc8zPlXyMObpEqYRR0HLGcW0SA_n8pH";
+            width = 1920;
+        }
+        );
+        "place_id" = "ChIJESooEcu1j4ARUKm-wD4Zeyw";
+        "plus_code" =     {
+            "compound_code" = "8XP7+JC Cupertino, CA, USA";
+            "global_code" = "849V8XP7+JC";
+        };
+        "price_level" = 1;
+        rating = "4.4";
+        reference = "ChIJESooEcu1j4ARUKm-wD4Zeyw";
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 256;
+        vicinity = "20672 Homestead Road, Cupertino";
+    },
+    {
+        "business_status" = OPERATIONAL;
+        geometry =     {
+            location =         {
+                lat = "37.3373151";
+                lng = "-122.0364837";
+            };
+            viewport =         {
+                northeast =             {
+                    lat = "37.3386570802915";
+                    lng = "-122.0350025697085";
+                };
+                southwest =             {
+                    lat = "37.33595911970851";
+                    lng = "-122.0377005302915";
+                };
+            };
+        };
+        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png";
+        "icon_background_color" = "#FF9E67";
+        "icon_mask_base_uri" = "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet";
+        name = "Chipotle Mexican Grill";
+        "opening_hours" =     {
+            "open_now" = 1;
+        };
+        photos =     (
+        {
+            height = 1080;
+            "html_attributions" =             (
+            "<a href=\"https://maps.google.com/maps/contrib/114331261903817412421\">Ignasi Mas</a>"
+            );
+            "photo_reference" = "Aap_uEB7aEX3SN-02tvcfXRKOOrK45Pe_1Vy4mQvuwV13a60vsVJ7nY-vNFuC93jcYWLKsy3XLvHiKYFdn02Be2o4k_b8aBt1NIpfgbfuCZ0vCctmXK4vmiqyogD5nP5N9XJPNH1CIaf_5ZRONJx_U7YDYF6D9Hq7j6fM2bB2KElyAiMfxf8";
+            width = 1920;
+        }
+        );
+        "place_id" = ChIJAfj5Qsu1j4ARxBdIenIu8NU;
+        "plus_code" =     {
+            "compound_code" = "8XP7+WC Cupertino, CA, USA";
+            "global_code" = "849V8XP7+WC";
+        };
+        "price_level" = 1;
+        rating = "3.7";
+        reference = ChIJAfj5Qsu1j4ARxBdIenIu8NU;
+        scope = GOOGLE;
+        types =     (
+        restaurant,
+        food,
+        "point_of_interest",
+        establishment
+        );
+        "user_ratings_total" = 464;
+        vicinity = "20688 Homestead Road, Cupertino";
+    }
+    )
+    , "status": OK, "html_attributions": <__NSArray0 0x7fff8004b160>(
+    
+    )
+])

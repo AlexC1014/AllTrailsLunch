@@ -12,8 +12,11 @@ class RestaurantListViewController: UIViewController {
     
     let tableView: UITableView
     
-    init() {
+    init(delegate: UITableViewDelegate & UITableViewDataSource) {
         tableView = UITableView()
+        tableView.delegate = delegate
+        tableView.dataSource = delegate
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -22,6 +25,24 @@ class RestaurantListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(tableView)
+        registerTableView()
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         tableView.frame = self.view.bounds
+    }
+    
+    fileprivate func registerTableView() {
+        let nib = UINib(nibName: "RestaurantTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "restaurantCell")
+    }
+}
+
+extension RestaurantListViewController: ChildViewController {
+    func reloadData(restauants: [Restaurant]) {
+        self.tableView.reloadData()
     }
 }

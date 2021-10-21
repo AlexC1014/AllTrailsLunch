@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,23 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U02-7q-D8L">
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U02-7q-D8L">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <connections>
-                                    <segue destination="cbm-UM-s4m" kind="embed" id="OvU-Sd-xkd"/>
-                                </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMc-ZC-QKi">
+                                <rect key="frame" x="157" y="778" width="100" height="42"/>
+                                <color key="backgroundColor" name="AllTrailsGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="A6o-uC-WeW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="NtT-Sc-XaV"/>
+                                </constraints>
+                                <state key="normal" title="Map" image="ButtonMap"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SMc-ZC-QKi" secondAttribute="bottom" constant="42" id="PZL-PV-3RY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U02-7q-D8L" secondAttribute="bottom" id="UKc-KA-xZK"/>
                             <constraint firstItem="U02-7q-D8L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bpY-kZ-BYn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U02-7q-D8L" secondAttribute="trailing" id="dgg-tf-eMc"/>
                             <constraint firstItem="U02-7q-D8L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eqc-nY-VtW"/>
+                            <constraint firstItem="SMc-ZC-QKi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="g6V-ju-JJi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dcL-dt-17Q"/>
+                    <connections>
+                        <outlet property="containerView" destination="U02-7q-D8L" id="VV8-9r-CRw"/>
+                        <outlet property="toggleViewButton" destination="SMc-ZC-QKi" id="m5D-mo-r5Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,22 +69,12 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="71.651785714285708"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="jzS-CN-Czn">
-            <objects>
-                <viewController id="cbm-UM-s4m" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w62-UV-CXC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t79-PK-sZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1651" y="72"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="ButtonMap" width="28" height="34"/>
+        <namedColor name="AllTrailsGreen">
+            <color red="0.25882352941176473" green="0.54117647058823526" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -20,7 +20,6 @@ protocol Request {
     var path: String { get }
     var fullURL: String { get }
     var method: HTTPMethod { get }
-    var wrapper: String? { get }
     
     func decode(data: Data) throws -> Response
 }

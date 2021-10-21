@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  AllTrailsLunch
+//
+//  Created by Alex Carroll on 10/20/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+API_KEY = AIzaSyDQSd210wKX_7cz9MELkxhaEOUhFP0AkSk

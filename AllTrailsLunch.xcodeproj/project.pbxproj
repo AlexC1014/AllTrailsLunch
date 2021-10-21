@@ -15,7 +15,7 @@
 		55E36AC1271E47AC00F996E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E36ABF271E47AC00F996E6 /* LaunchScreen.storyboard */; };
 		55E36ACC271E47AC00F996E6 /* AllTrailsLunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36ACB271E47AC00F996E6 /* AllTrailsLunchTests.swift */; };
 		55E36AD7271E47AC00F996E6 /* AllTrailsLunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36AD6271E47AC00F996E6 /* AllTrailsLunchUITests.swift */; };
-		55E36AE8271E559B00F996E6 /* RestaurantTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55E36AE7271E559B00F996E6 /* RestaurantTableCell.xib */; };
+		55E36AE8271E559B00F996E6 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55E36AE7271E559B00F996E6 /* RestaurantTableViewCell.xib */; };
 		55E36AEA271E564200F996E6 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36AE9271E564200F996E6 /* RestaurantTableViewCell.swift */; };
 		55E36AEC271F86D000F996E6 /* RestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55E36AEB271F86D000F996E6 /* RestaurantView.xib */; };
 		55E36AEE271F894400F996E6 /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36AED271F894400F996E6 /* RestaurantView.swift */; };
@@ -47,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55C17F732720E26E0020B216 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		55C17F742720EC300020B216 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		55E36AB1271E47A900F996E6 /* AllTrailsLunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllTrailsLunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E36AB4271E47A900F996E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E36AB6271E47A900F996E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		55E36AD2271E47AC00F996E6 /* AllTrailsLunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllTrailsLunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E36AD6271E47AC00F996E6 /* AllTrailsLunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrailsLunchUITests.swift; sourceTree = "<group>"; };
 		55E36AD8271E47AC00F996E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55E36AE7271E559B00F996E6 /* RestaurantTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableCell.xib; sourceTree = "<group>"; };
+		55E36AE7271E559B00F996E6 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		55E36AE9271E564200F996E6 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		55E36AEB271F86D000F996E6 /* RestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantView.xib; sourceTree = "<group>"; };
 		55E36AED271F894400F996E6 /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,8 @@
 		55E36AA8271E47A900F996E6 = {
 			isa = PBXGroup;
 			children = (
+				55C17F742720EC300020B216 /* test.json */,
+				55C17F732720E26E0020B216 /* Config.xcconfig */,
 				55E36AB3271E47A900F996E6 /* AllTrailsLunch */,
 				55E36ACA271E47AC00F996E6 /* AllTrailsLunchTests */,
 				55E36AD5271E47AC00F996E6 /* AllTrailsLunchUITests */,
@@ -158,7 +162,7 @@
 		55E36AE4271E53E100F996E6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				55E36AE7271E559B00F996E6 /* RestaurantTableCell.xib */,
+				55E36AE7271E559B00F996E6 /* RestaurantTableViewCell.xib */,
 				55E36AE9271E564200F996E6 /* RestaurantTableViewCell.swift */,
 				55E36AEB271F86D000F996E6 /* RestaurantView.xib */,
 				55E36AED271F894400F996E6 /* RestaurantView.swift */,
@@ -324,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55E36AC1271E47AC00F996E6 /* LaunchScreen.storyboard in Resources */,
-				55E36AE8271E559B00F996E6 /* RestaurantTableCell.xib in Resources */,
+				55E36AE8271E559B00F996E6 /* RestaurantTableViewCell.xib in Resources */,
 				55E36ABE271E47AC00F996E6 /* Assets.xcassets in Resources */,
 				55E36ABC271E47A900F996E6 /* Main.storyboard in Resources */,
 				55E36AEC271F86D000F996E6 /* RestaurantView.xib in Resources */,
@@ -421,6 +425,7 @@
 /* Begin XCBuildConfiguration section */
 		55E36AD9271E47AC00F996E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C17F732720E26E0020B216 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -482,6 +487,7 @@
 		};
 		55E36ADA271E47AC00F996E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C17F732720E26E0020B216 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -541,6 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V7L34WDBV7;
 				INFOPLIST_FILE = AllTrailsLunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,6 +566,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V7L34WDBV7;
 				INFOPLIST_FILE = AllTrailsLunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

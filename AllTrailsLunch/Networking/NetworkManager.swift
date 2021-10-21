@@ -27,21 +27,24 @@ class NetworkManager {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         URLSession.shared.dataTask(with: urlRequest) { data, response, err in
-            guard err == nil else {
-                completion(.failure(NetworkError.errorResponse(err)))
-                return
-            }
-            
-            guard let responseData = data else {
-                completion(.failure(NetworkError.noData))
-                return
-            }
-            
-            do {
-                let response = try request.decode(data: responseData)
-                completion(.success(response))
-            } catch {
-                completion(.failure(NetworkError.errorDecoding(error)))
+            DispatchQueue.main.async {
+                guard err == nil else {
+                    completion(.failure(NetworkError.errorResponse(err)))
+                    return
+                }
+                
+                guard let responseData = data else {
+                    completion(.failure(NetworkError.noData))
+                    return
+                }
+                
+                do {
+                    let response = try request.decode(data: responseData)
+                    completion(.success(response))
+                } catch {
+                    print(error)
+                    completion(.failure(NetworkError.errorDecoding(error)))
+                }
             }
         }.resume()
     }

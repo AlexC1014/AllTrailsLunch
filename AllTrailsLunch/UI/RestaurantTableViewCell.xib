@@ -22,14 +22,15 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FV1-kj-3eh">
                                 <rect key="frame" x="363.5" y="9.5" width="20.5" height="17.5"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5af-aS-lZY" customClass="RestaurantView" customModule="AllTrailsLunch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5af-aS-lZY">
                                 <rect key="frame" x="8" y="8" width="347.5" height="91"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5af-aS-lZY" firstAttribute="leading" secondItem="Qcw-Eu-UFq" secondAttribute="leading" constant="8" id="5Ic-MW-h5S"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FV1-kj-3eh" secondAttribute="bottom" constant="44" id="JDR-BW-PDB"/>
                             <constraint firstAttribute="trailing" secondItem="FV1-kj-3eh" secondAttribute="trailing" constant="10" id="M4d-Rw-yDW"/>
                             <constraint firstItem="FV1-kj-3eh" firstAttribute="top" secondItem="Qcw-Eu-UFq" secondAttribute="top" constant="8" id="Nsx-hi-UJ7"/>
                             <constraint firstItem="FV1-kj-3eh" firstAttribute="leading" secondItem="5af-aS-lZY" secondAttribute="trailing" constant="8" id="haQ-XU-kjS"/>
@@ -57,6 +58,9 @@
         <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -6,12 +6,45 @@
 //
 
 import Foundation
+import UIKit
 
-struct Restaurant {
+struct Restaurant: Codable {
     let name: String?
     let priceLevel: Int?
     let rating: Double?
     let ratingCount: Int?
     let address: String?
-    let phoneNumber: String?
+    var geometry: Geometry?
+    var photos: [Photo]?
+    //let imageURL: String?
+    //let image: UIImage? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case priceLevel = "price_level"
+        case rating
+        case ratingCount = "user_ratings_total"
+        case address = "vicinity"
+        //case imageURL
+    }
+}
+
+struct PlacesResponse: Codable {
+    var results: [Restaurant]
+    var status: String
+}
+
+struct Geometry: Codable  {
+    var location: Location
+}
+
+struct Location: Codable  {
+    var lat: Double
+    var lng: Double
+}
+
+struct Photo: Codable {
+    var height: Double
+    var width: Double
+    var photoReference: String
 }
