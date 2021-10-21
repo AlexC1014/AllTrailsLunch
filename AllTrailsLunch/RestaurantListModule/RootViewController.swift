@@ -55,10 +55,6 @@ class RootViewController: UIViewController {
         toggleViewButton.addTarget(self, action: #selector(toggleView), for: .touchUpInside)
         toggleViewButton.layer.cornerRadius = 8
         addSearchBar()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         if locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
@@ -98,22 +94,10 @@ class RootViewController: UIViewController {
             let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: Constants.Strings.alertRetryButton, style: .default, handler: nil)
             alertVC.addAction(okAction)
-            self.present(alertVC, animated: true, completion: nil)
+            self.present(alertVC, animated: true) { [weak self] in
+                self?.viewModel.loadNearbyRestauants()
+            }
         }
-        
-        viewModel.showEmpty = { [weak self] in
-            
-            //Remove child VC and show retry button
-            
-            //            guard let self = self else {return}
-            //            let button = UIButton()
-            //            button.setTitle(Constants.retryButtonText, for: .normal)
-            //            button.setTitleColor(.white, for: .normal)
-            //            button.addTarget(self, action: #selector(self.handleRetryButtonTapped), for: .touchUpInside)
-            //            self.tableView.backgroundView = button
-            //            self.tableView.backgroundView?.isUserInteractionEnabled = true
-        }
-        
         viewModel.showRestaurants = { [weak self] in
             self?.mainChildVC?.reloadData()
         }
@@ -123,11 +107,9 @@ class RootViewController: UIViewController {
         guard let childVC = mainChildVC else {
             return
         }
-        
         guard loadingState != .loading else {
             return
         }
-        
         viewState.toggle()
         removeChildVC(childVC: childVC)
         
@@ -158,6 +140,7 @@ class RootViewController: UIViewController {
         searchController.searchBar.searchTextField.rightView = rightTextFieldButton
         searchController.searchBar.searchTextField.rightViewMode = .always
         searchController.searchBar.setNeedsLayout()
+        navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController = searchController
     }
     
@@ -167,6 +150,10 @@ class RootViewController: UIViewController {
         }
     }
     
+    @objc fileprivate func didTapAnnotation(sender: UIGestureRecognizer) {
+        guard let restaurant = (sender.view as? RestaurantView)?.restaurant else { return }
+        performSegue(withIdentifier: "detailSegue", sender: restaurant)
+    }
     
     fileprivate func addChildVC(_ childVC: ChildViewController) {
         addChild(childVC)
@@ -181,6 +168,13 @@ class RootViewController: UIViewController {
         childVC.willMove(toParent: nil)
         childVC.view.removeFromSuperview()
         childVC.removeFromParent()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue", let detailVC = segue.destination as? DetailViewController, let restaurant = sender as? Restaurant {
+            detailVC.viewModel = self.viewModel
+            detailVC.restaurant = restaurant
+        }
     }
 }
 
@@ -211,7 +205,7 @@ extension RootViewController: UITableViewDataSource {
 
 extension RootViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Push VC?
+        performSegue(withIdentifier: "detailSegue", sender: viewModel.restaurants[indexPath.row])
     }
 }
 
@@ -230,7 +224,17 @@ extension RootViewController: MKMapViewDelegate {
         }
         pin.image = UIImage(named: "staticPin")
         pin.canShowCallout = true
-        
+        if let restAnnotation = annotation as? RestaurantAnnotation {
+            let restaurant = restAnnotation.restaurant
+            let customCalloutView: RestaurantView? = RestaurantView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
+            customCalloutView?.configure(for: restaurant, hasHalfRating: viewModel.hasHalfRating(restaurant: restaurant))
+            viewModel.loadRestarauntImage(for: restaurant) { image in
+                customCalloutView?.imageView.image = image
+            }
+            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAnnotation))
+            customCalloutView?.addGestureRecognizer(tap)
+            pin.detailCalloutAccessoryView = customCalloutView
+        }
         return pin
     }
     
@@ -240,6 +244,11 @@ extension RootViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         view.image = UIImage(named: "selectedPin")
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = mapView.centerCoordinate
+        viewModel.location = CLLocation(latitude: center.latitude, longitude: center.longitude)
     }
 }
 
@@ -253,7 +262,9 @@ extension RootViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = manager.location {
             viewModel.location = loc
-            viewModel.loadNearbyRestauants()
+            if loadingState != .loading {
+                viewModel.loadNearbyRestauants()
+            }
             manager.stopUpdatingLocation()
         }
     }

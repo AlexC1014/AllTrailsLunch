@@ -8,35 +8,20 @@
 import CoreLocation
 import Foundation
 
-protocol PlacesRequest: Request {}
-
-class NearbyRestaurantRequest: PlacesRequest {
+class NearbyRestaurantRequest: Request {
     typealias Response = [Restaurant]
     
-    var location: CLLocation
-    
-    var path: String = Constants.Networking.nearbySearchPath
+    var scheme: String = Constants.Networking.scheme
+    var host: String = Constants.Networking.host
+    var queryItems: [URLQueryItem]
+    var path: String = Constants.Networking.nearbyPath
     var method: HTTPMethod = .GET
-    var fullURL: String {
-        return "\(self.baseURL)\(self.path)?\(String(format: Constants.Networking.locationPamater, location.coordinate.latitude, location.coordinate.longitude))&\(Constants.Networking.restaurantTypeParameter)&\(String(format: Constants.Networking.radiusParameter, 1500))&\(String(format: Constants.Networking.keyParameter, apiKey))"
-    }
-    var apiKey: String = ""
-    
+
     init(location: CLLocation) {
-        self.location = location
-        if let key = Bundle.main.infoDictionary?["API_KEY"] as? String {
-            apiKey = key
-        }
+        self.queryItems = [URLQueryItem(name: Constants.Networking.locationString, value: "\(location.coordinate.latitude), \(location.coordinate.longitude)"), URLQueryItem(name: Constants.Networking.radiusString, value: "\(Constants.Values.mapRadius)"), URLQueryItem(name: Constants.Networking.typeString, value: Constants.Networking.typeValue)]
     }
     
     func decode(data: Data) throws -> [Restaurant] {
-//        do {
-//            let res = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-//            //print(res)
-//        } catch {
-//            //Do nothig
-//        }
-        
         let decoder = JSONDecoder()
         let response = try decoder.decode(PlacesResponse.self, from: data)
         return response.results

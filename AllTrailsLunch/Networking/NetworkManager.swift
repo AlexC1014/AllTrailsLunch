@@ -22,7 +22,14 @@ class NetworkManager {
     
     func request<R: Request>(_ request: R, completion: @escaping (Result<R.Response, Error>) -> Void) {
         
-        guard let url = URL(string: request.fullURL) else {
+        var components = URLComponents()
+        components.scheme = request.scheme
+        components.host = request.host
+        components.path = request.path
+        components.queryItems = request.queryItems
+        components.queryItems?.append(URLQueryItem(name: Constants.Networking.keyString, value: Bundle.main.infoDictionary?["API_KEY"] as? String))
+        
+        guard let url = components.url else {
             completion(.failure(NetworkError.invalidURL))
             return
         }

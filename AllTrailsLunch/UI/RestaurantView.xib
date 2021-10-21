@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TJJ-07-Ckp">
-                    <rect key="frame" x="91" y="65" width="509" height="69"/>
+                    <rect key="frame" x="96" y="65" width="504" height="69"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8z-ko-uml" userLabel="Name Label">
                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
@@ -103,18 +103,20 @@
                     </subviews>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xyc-gu-51h">
-                    <rect key="frame" x="8" y="64.5" width="75" height="70"/>
+                    <rect key="frame" x="8" y="62.5" width="80" height="74"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Xyc-gu-51h" secondAttribute="height" multiplier="100:93" id="ajl-tr-byn"/>
-                        <constraint firstAttribute="width" constant="75" id="vt2-eh-NNR"/>
+                        <constraint firstAttribute="width" secondItem="Xyc-gu-51h" secondAttribute="height" multiplier="100:93" priority="999" id="ajl-tr-byn"/>
+                        <constraint firstAttribute="width" constant="80" id="vt2-eh-NNR"/>
                     </constraints>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TJJ-07-Ckp" secondAttribute="bottom" constant="8" id="8Ny-da-WDE"/>
                 <constraint firstItem="Xyc-gu-51h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="8Wo-pa-fy0"/>
                 <constraint firstItem="Xyc-gu-51h" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="NcQ-Iq-U7v"/>
+                <constraint firstItem="TJJ-07-Ckp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Uch-Sv-Fc0"/>
                 <constraint firstItem="TJJ-07-Ckp" firstAttribute="leading" secondItem="Xyc-gu-51h" secondAttribute="trailing" constant="8" id="W2f-0K-8k8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TJJ-07-Ckp" secondAttribute="trailing" constant="8" id="aCx-k3-0sF"/>
                 <constraint firstItem="Xyc-gu-51h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="q36-hN-MWR"/>

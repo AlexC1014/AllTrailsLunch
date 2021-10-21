@@ -42,15 +42,24 @@ class RestaurantMapViewController: UIViewController {
 
 extension RestaurantMapViewController: ChildViewController {
     func reloadData() {
+        mapView.removeAnnotations(mapView.annotations)
         var annotations: [MKPointAnnotation] = []
         for restauant in viewModel.restaurants {
             if let lat = restauant.geometry?.location.lat, let lon = restauant.geometry?.location.lng {
-                let annotation = MKPointAnnotation()
+                let annotation = RestaurantAnnotation(restaurant: restauant)
                 annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                annotation.title = restauant.name
                 annotations.append(annotation)
             }
         }
         mapView.addAnnotations(annotations)
+    }
+}
+
+class RestaurantAnnotation: MKPointAnnotation {
+    var restaurant: Restaurant
+    
+    init(restaurant: Restaurant) {
+        self.restaurant = restaurant
+        super.init()
     }
 }

@@ -13,17 +13,20 @@ struct Restaurant: Codable {
     let priceLevel: Int?
     let rating: Double?
     let ratingCount: Int?
+    let vicinity: String?
     let address: String?
+    var openHours: OpenHours?
     var geometry: Geometry?
     var photos: [Photo]?
-    //let image: UIImage? = nil
     
     enum CodingKeys: String, CodingKey {
         case name
         case priceLevel = "price_level"
         case rating
         case ratingCount = "user_ratings_total"
-        case address = "vicinity"
+        case vicinity
+        case address = "formatted_address"
+        case openHours = "opening_hours"
         case geometry
         case photos
     }
@@ -52,6 +55,14 @@ struct Photo: Codable {
         case height
         case width
         case photoReference = "photo_reference"
+    }
+}
+
+struct OpenHours: Codable {
+    var isOpen: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case isOpen = "open_now"
     }
 }
 

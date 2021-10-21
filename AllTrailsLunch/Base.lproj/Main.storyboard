@@ -45,11 +45,64 @@
                     <connections>
                         <outlet property="containerView" destination="U02-7q-D8L" id="VV8-9r-CRw"/>
                         <outlet property="toggleViewButton" destination="SMc-ZC-QKi" id="m5D-mo-r5Z"/>
+                        <segue destination="emb-1Y-TGM" kind="show" identifier="detailSegue" id="HjP-gm-5nu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="71.651785714285708"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="aVP-QI-8Nr">
+            <objects>
+                <viewController id="emb-1Y-TGM" customClass="DetailViewController" customModule="AllTrailsLunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kmy-H8-HTR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QM0-IU-OTv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QM0-IU-OTv" secondAttribute="height" multiplier="3/2" id="3pL-rL-Red"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqh-KO-fuW" userLabel="Name Label">
+                                <rect key="frame" x="8" y="372" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur2-cK-CCD" userLabel="Address Label">
+                                <rect key="frame" x="8" y="400.5" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Zs-Gy-15q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Zs-Gy-15q" firstAttribute="trailing" secondItem="Rqh-KO-fuW" secondAttribute="trailing" constant="8" id="FEU-Mn-zhs"/>
+                            <constraint firstItem="6Zs-Gy-15q" firstAttribute="trailing" secondItem="Ur2-cK-CCD" secondAttribute="trailing" constant="8" id="R2S-IX-w1q"/>
+                            <constraint firstItem="Ur2-cK-CCD" firstAttribute="top" secondItem="Rqh-KO-fuW" secondAttribute="bottom" constant="8" id="VIk-o0-9mD"/>
+                            <constraint firstItem="QM0-IU-OTv" firstAttribute="top" secondItem="6Zs-Gy-15q" secondAttribute="top" id="WSi-WK-6EN"/>
+                            <constraint firstItem="Rqh-KO-fuW" firstAttribute="top" secondItem="QM0-IU-OTv" secondAttribute="bottom" constant="8" id="YbL-SH-Xnb"/>
+                            <constraint firstItem="Ur2-cK-CCD" firstAttribute="leading" secondItem="6Zs-Gy-15q" secondAttribute="leading" constant="8" id="brO-hO-YWY"/>
+                            <constraint firstItem="Rqh-KO-fuW" firstAttribute="leading" secondItem="6Zs-Gy-15q" secondAttribute="leading" constant="8" id="g3P-kV-OGR"/>
+                            <constraint firstItem="QM0-IU-OTv" firstAttribute="leading" secondItem="6Zs-Gy-15q" secondAttribute="leading" id="lOI-YP-Fqp"/>
+                            <constraint firstItem="6Zs-Gy-15q" firstAttribute="trailing" secondItem="QM0-IU-OTv" secondAttribute="trailing" id="nxs-rV-62N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NXK-St-rYd"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="Ur2-cK-CCD" id="cDT-az-7Tl"/>
+                        <outlet property="imageView" destination="QM0-IU-OTv" id="xjW-Uv-a3n"/>
+                        <outlet property="nameLabel" destination="Rqh-KO-fuW" id="oIQ-JL-XE6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGV-iZ-g2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hFx-Ms-Yec">

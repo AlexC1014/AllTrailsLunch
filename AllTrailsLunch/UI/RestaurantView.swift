@@ -18,6 +18,8 @@ class RestaurantView: UIView {
     @IBOutlet weak var interpunctLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var restaurant: Restaurant?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         sharedInit()
@@ -50,9 +52,15 @@ class RestaurantView: UIView {
     }
     
     func configure(for restaurant: Restaurant, hasHalfRating: Bool) {
+        self.restaurant = restaurant
         nameLabel.text = restaurant.name
         priceLabel.text = restaurant.formattedPrice
-        descriptionLabel.text = restaurant.address
+        if let isOpen = restaurant.openHours?.isOpen {
+            descriptionLabel.text = isOpen ? Constants.Strings.isOpen : Constants.Strings.isNotOpen
+        } else {
+            descriptionLabel.text = Constants.Strings.unknownHours
+        }
+        
         nameLabel.sizeToFit()
         
         if restaurant.priceLevel == nil || restaurant.priceLevel == 0 {

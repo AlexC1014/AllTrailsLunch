@@ -16,9 +16,10 @@ enum HTTPMethod: String {
 
 protocol Request {
     associatedtype Response
-    var baseURL: String { get }
+    var scheme: String { get }
+    var host: String { get }
     var path: String { get }
-    var fullURL: String { get }
+    var queryItems: [URLQueryItem] { get }
     var method: HTTPMethod { get }
     
     func decode(data: Data) throws -> Response
