@@ -11,6 +11,7 @@ import UIKit
 class RestaurantTableViewCell: UITableViewCell {
     
     @IBOutlet weak var favoriteIcon: UIImageView!
+    @IBOutlet weak var restaurantView: RestaurantView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

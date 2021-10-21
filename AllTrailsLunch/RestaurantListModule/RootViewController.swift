@@ -23,7 +23,7 @@ class RootViewController: UIViewController {
             }
         }
     }
-
+    
     let viewModel: RestaurantListViewModel = RestaurantListViewModel()
     let locationManager = CLLocationManager()
     var viewState: ViewState = .list
@@ -43,7 +43,6 @@ class RootViewController: UIViewController {
         
         // Handle locations
         locationManager.delegate = self
-        viewModel.loadNearbyRestauants()
         
         toggleViewButton.addTarget(self, action: #selector(toggleView), for: .touchUpInside)
         toggleViewButton.layer.cornerRadius = 8
@@ -52,9 +51,11 @@ class RootViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //FIXME: Better handling around requesting access
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        if locationManager.authorizationStatus == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
     
     fileprivate func bindViewModel() {
@@ -87,17 +88,17 @@ class RootViewController: UIViewController {
             
             //Remove child VC and show retry button
             
-//            guard let self = self else {return}
-//            let button = UIButton()
-//            button.setTitle(Constants.retryButtonText, for: .normal)
-//            button.setTitleColor(.white, for: .normal)
-//            button.addTarget(self, action: #selector(self.handleRetryButtonTapped), for: .touchUpInside)
-//            self.tableView.backgroundView = button
-//            self.tableView.backgroundView?.isUserInteractionEnabled = true
+            //            guard let self = self else {return}
+            //            let button = UIButton()
+            //            button.setTitle(Constants.retryButtonText, for: .normal)
+            //            button.setTitleColor(.white, for: .normal)
+            //            button.addTarget(self, action: #selector(self.handleRetryButtonTapped), for: .touchUpInside)
+            //            self.tableView.backgroundView = button
+            //            self.tableView.backgroundView?.isUserInteractionEnabled = true
         }
         
         viewModel.showRestaurants = { [weak self] in
-            self?.mainChildVC?.reloadData(restauants: [])
+            self?.mainChildVC?.reloadData()
         }
     }
     
@@ -118,7 +119,7 @@ class RootViewController: UIViewController {
                 toggleViewButton.setTitle(Constants.Strings.mapButtongString, for: .normal)
             }
         case .map:
-            vc = RestaurantMapViewController(delegate: self)
+            vc = RestaurantMapViewController(delegate: self, viewModel: viewModel)
             if let listImage = UIImage(named: "ButtonList") {
                 toggleViewButton.setImage(listImage, for: .normal)
                 toggleViewButton.setTitle(Constants.Strings.listButtonString, for: .normal)
@@ -134,6 +135,7 @@ class RootViewController: UIViewController {
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
         mainChildVC = childVC
+        mainChildVC?.reloadData()
     }
     
     func removeChildVC(childVC: UIViewController) {
@@ -148,8 +150,33 @@ extension RootViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell") as? RestaurantTableViewCell else {
             return UITableViewCell()
         }
-        
         let restaurant = viewModel.restaurants[indexPath.row]
+        cell.restaurantView.nameLabel.text = restaurant.name
+        cell.restaurantView.priceLabel.text = restaurant.formattedPrice
+        cell.restaurantView.descriptionLabel.text = restaurant.address
+        
+        for subview in cell.restaurantView.ratingView.arrangedSubviews {
+            cell.restaurantView.ratingView.removeArrangedSubview(subview)
+        }
+        if let stars = restaurant.rating {
+            for _ in 0...Int(stars) {
+                let image = UIImage(systemName: "star.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
+                cell.restaurantView.ratingView.addArrangedSubview(UIImageView(image: image))
+            }
+            if viewModel.hasHalfRating(restaurant: restaurant) {
+                let image = UIImage(systemName: "star.leadinghalf.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
+                cell.restaurantView.ratingView.addArrangedSubview(UIImageView(image: image))
+            }
+            let starCount = cell.restaurantView.ratingView.arrangedSubviews.count
+            if starCount < 5 {
+                let grayStars: [UIView] = Array(repeating: UIImageView(image: UIImage(systemName: "star.fill")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)), count: 5 - starCount)
+                for star in grayStars {
+                    cell.restaurantView.ratingView.addArrangedSubview(star)
+                }
+            }
+            
+        }
+        
         return cell
     }
     
@@ -165,18 +192,47 @@ extension RootViewController: UITableViewDelegate {
 }
 
 extension RootViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let id = "Identifier"
+        var pin: MKPinAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? MKPinAnnotationView {
+            dequeuedView.annotation = annotation
+            pin = dequeuedView
+        }else{
+            pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+        }
+        pin.image = UIImage(named: "staticPin")
+        return pin
+    }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.image = UIImage(named: "activePin")
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        view.image = UIImage(named: "selectedPin")
+    }
 }
 
 extension RootViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .authorizedWhenInUse {
             manager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let loc = manager.location {
+            viewModel.location = loc
             viewModel.loadNearbyRestauants()
+            manager.stopUpdatingLocation()
         }
     }
 }
 
 protocol ChildViewController: UIViewController {
-    func reloadData(restauants: [Restaurant])
+    func reloadData()
 }

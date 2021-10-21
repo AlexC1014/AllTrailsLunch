@@ -11,8 +11,10 @@ import Foundation
 protocol RestaurantListViewModelProtocol {
     func loadNearbyRestauants()
     func loadRestaurants(for search: String)
+    func hasHalfRating(restaurant: Restaurant) -> Bool
     
     var restaurants: [Restaurant] { get }
+    var location: CLLocation { get set }
     var showRestaurants: (() -> Void)? { get set }
     var showEmpty: (() -> Void)? { get set }
     var showError: ((String, String) -> Void)? { get set }
@@ -23,6 +25,7 @@ protocol RestaurantListViewModelProtocol {
 class RestaurantListViewModel: RestaurantListViewModelProtocol {
     
     var restaurants: [Restaurant] = []
+    var location: CLLocation = CLLocation()
     
     var showRestaurants: (() -> Void)?
     var showEmpty: (() -> Void)?
@@ -31,10 +34,6 @@ class RestaurantListViewModel: RestaurantListViewModelProtocol {
     var hideLoading: (() -> Void)?
     
     func loadNearbyRestauants() {
-        guard let location = CLLocationManager().location else {
-            showEmpty?()
-            return
-        }
         showLoading?()
         let request = NearbyRestaurantRequest(location: location)
         NetworkManager.shared.request(request) { [weak self] result in
@@ -56,6 +55,11 @@ class RestaurantListViewModel: RestaurantListViewModelProtocol {
     
     func loadRestaurants(for search: String) {
         //<#code#>
+    }
+    
+    func hasHalfRating(restaurant: Restaurant) -> Bool {
+        guard let rating = restaurant.rating else { return false }
+        return rating.truncatingRemainder(dividingBy: 1) >= Constants.Values.minimumHalfStarRating
     }
     
     

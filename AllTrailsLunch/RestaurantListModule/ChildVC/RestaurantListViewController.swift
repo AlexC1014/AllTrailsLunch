@@ -42,7 +42,7 @@ class RestaurantListViewController: UIViewController {
 }
 
 extension RestaurantListViewController: ChildViewController {
-    func reloadData(restauants: [Restaurant]) {
+    func reloadData() {
         self.tableView.reloadData()
     }
 }

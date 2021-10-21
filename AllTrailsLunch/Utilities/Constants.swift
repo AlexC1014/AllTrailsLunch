@@ -27,5 +27,6 @@ struct Constants {
     
     struct Values {
         static let mapRadius = 2500.0
+        static let minimumHalfStarRating = 0.25
     }
 }

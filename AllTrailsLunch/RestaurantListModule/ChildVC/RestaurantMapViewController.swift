@@ -13,10 +13,12 @@ import UIKit
 class RestaurantMapViewController: UIViewController {
     
     let mapView: MKMapView
+    let viewModel: RestaurantListViewModel
     
-    init(delegate: MKMapViewDelegate) {
-        mapView = MKMapView()
-        mapView.delegate = delegate
+    init(delegate: MKMapViewDelegate, viewModel: RestaurantListViewModel) {
+        self.mapView = MKMapView()
+        self.mapView.delegate = delegate
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,7 +29,7 @@ class RestaurantMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(mapView)
-        let coord = CLLocationManager().location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        let coord = viewModel.location.coordinate
         let coordinateRegion = MKCoordinateRegion(center: coord, latitudinalMeters: Constants.Values.mapRadius, longitudinalMeters: Constants.Values.mapRadius)
         mapView.setRegion(coordinateRegion, animated: false)
     }
@@ -39,7 +41,16 @@ class RestaurantMapViewController: UIViewController {
 }
 
 extension RestaurantMapViewController: ChildViewController {
-    func reloadData(restauants: [Restaurant]) {
-        // Handle new restaurants
+    func reloadData() {
+        var annotations: [MKPointAnnotation] = []
+        for restauant in viewModel.restaurants {
+            if let lat = restauant.geometry?.location.lat, let lon = restauant.geometry?.location.lng {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                annotation.title = restauant.name
+                annotations.append(annotation)
+            }
+        }
+        mapView.addAnnotations(annotations)
     }
 }

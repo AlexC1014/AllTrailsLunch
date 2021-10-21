@@ -25,6 +25,8 @@ struct Restaurant: Codable {
         case rating
         case ratingCount = "user_ratings_total"
         case address = "vicinity"
+        case geometry
+        case photos
         //case imageURL
     }
 }
@@ -47,4 +49,16 @@ struct Photo: Codable {
     var height: Double
     var width: Double
     var photoReference: String
+    
+    enum CodingKeys: String, CodingKey {
+        case height
+        case width
+        case photoReference = "photo_reference"
+    }
+}
+
+extension Restaurant {
+    var formattedPrice: String {
+        return String(repeating: "$", count: priceLevel ?? 0)
+    }
 }
