@@ -16,7 +16,6 @@ struct Restaurant: Codable {
     let address: String?
     var geometry: Geometry?
     var photos: [Photo]?
-    //let imageURL: String?
     //let image: UIImage? = nil
     
     enum CodingKeys: String, CodingKey {
@@ -27,7 +26,6 @@ struct Restaurant: Codable {
         case address = "vicinity"
         case geometry
         case photos
-        //case imageURL
     }
 }
 

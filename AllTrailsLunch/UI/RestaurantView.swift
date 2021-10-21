@@ -20,24 +20,64 @@ class RestaurantView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        sharedInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        sharedInit()
     }
     
-    func commonInit() {
+    func sharedInit() {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
-        //self.interpunctLabel.isAccessibilityElement = false
-        //titleLabel.font = UIFont.systemFont(ofSize: <#T##CGFloat#>)
+        self.interpunctLabel.isAccessibilityElement = false
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        priceLabel.font = UIFont.systemFont(ofSize: 12)
+        interpunctLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 12)
+        
+        nameLabel.textColor = .secondaryLabel
+        priceLabel.textColor = .tertiaryLabel
+        interpunctLabel.textColor = .tertiaryLabel
+        descriptionLabel.textColor = .tertiaryLabel
     }
     
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: "RestaurantView", bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
+    }
+    
+    func configure(for restaurant: Restaurant, hasHalfRating: Bool) {
+        nameLabel.text = restaurant.name
+        priceLabel.text = restaurant.formattedPrice
+        descriptionLabel.text = restaurant.address
+        nameLabel.sizeToFit()
+        
+        if restaurant.priceLevel == nil || restaurant.priceLevel == 0 {
+            priceLabel.isHidden = true
+            interpunctLabel.isHidden = true
+        } else {
+            priceLabel.isHidden = false
+            interpunctLabel.isHidden = false
+        }
+        
+        guard let rating = restaurant.rating else {
+            return
+        }
+        for (index,subview) in ratingView.arrangedSubviews.enumerated() {
+            guard let imageView = subview as? UIImageView else {
+                continue
+            }
+            if index < Int(rating) {
+                imageView.image = UIImage(systemName: "star.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
+            } else if index == Int(rating) && hasHalfRating {
+                imageView.image = UIImage(systemName: "star.leadinghalf.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
+            } else {
+                imageView.image = UIImage(systemName: "star.fill")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+            }
+        }
+        
     }
 }

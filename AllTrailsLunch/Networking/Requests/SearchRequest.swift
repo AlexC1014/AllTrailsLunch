@@ -1,19 +1,17 @@
 //
-//  NearbySearchRequest.swift
+//  SearchRequest.swift
 //  AllTrailsLunch
 //
-//  Created by Alex Carroll on 10/19/21.
+//  Created by Alex Carroll on 10/20/21.
 //
 
 import CoreLocation
 import Foundation
 
-protocol PlacesRequest: Request {}
-
-class NearbyRestaurantRequest: PlacesRequest {
+class SearchRequest: PlacesRequest {
     typealias Response = [Restaurant]
     
-    var location: CLLocation
+    var search: String
     
     var path: String = Constants.Networking.nearbySearchPath
     var method: HTTPMethod = .GET
@@ -22,8 +20,8 @@ class NearbyRestaurantRequest: PlacesRequest {
     }
     var apiKey: String = ""
     
-    init(location: CLLocation) {
-        self.location = location
+    init(search: String) {
+        self.search = search
         if let key = Bundle.main.infoDictionary?["API_KEY"] as? String {
             apiKey = key
         }

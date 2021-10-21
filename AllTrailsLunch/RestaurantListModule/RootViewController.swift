@@ -24,19 +24,27 @@ class RootViewController: UIViewController {
         }
     }
     
+    enum LoadingState {
+        case none
+        case loading
+        case loaded
+    }
+    
     let viewModel: RestaurantListViewModel = RestaurantListViewModel()
     let locationManager = CLLocationManager()
     var viewState: ViewState = .list
+    var loadingState: LoadingState = .none
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var mainChildVC: ChildViewController?
+    let searchController = UISearchController()
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var toggleViewButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //FIXME: Set title view
-        self.title = "All Trails Lunch"
+        self.navigationItem.titleView = getTitleView()
+        self.containerView.backgroundColor = .systemGroupedBackground
         
         bindViewModel()
         addChildVC(RestaurantListViewController(delegate: self))
@@ -46,6 +54,7 @@ class RootViewController: UIViewController {
         
         toggleViewButton.addTarget(self, action: #selector(toggleView), for: .touchUpInside)
         toggleViewButton.layer.cornerRadius = 8
+        addSearchBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,9 +67,16 @@ class RootViewController: UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        searchController.searchBar.searchTextField.rightViewMode = .always
+    }
+    
     fileprivate func bindViewModel() {
+        
         viewModel.showLoading = { [weak self] in
             guard let self = self else {return}
+            self.loadingState = .loading
             self.containerView.alpha = 0
             self.activityIndicator = UIActivityIndicatorView()
             self.activityIndicator.center = self.view.center
@@ -70,8 +86,9 @@ class RootViewController: UIViewController {
         }
         
         viewModel.hideLoading = { [weak self] in
-            self?.containerView.alpha = 1
             guard let self = self else {return}
+            self.loadingState = .loaded
+            self.containerView.alpha = 1
             self.activityIndicator.hidesWhenStopped = true
             self.activityIndicator.stopAnimating()
         }
@@ -107,6 +124,10 @@ class RootViewController: UIViewController {
             return
         }
         
+        guard loadingState != .loading else {
+            return
+        }
+        
         viewState.toggle()
         removeChildVC(childVC: childVC)
         
@@ -126,6 +147,24 @@ class RootViewController: UIViewController {
             }
         }
         addChildVC(vc)
+    }
+    
+    fileprivate func addSearchBar() {
+        searchController.searchBar.placeholder = Constants.Strings.searchPlaceHolder
+        searchController.searchBar.searchTextField.leftView = nil
+        let rightTextFieldButton = UIButton()
+        rightTextFieldButton.setImage(UIImage(named: "Search Icon"), for: .normal)
+        rightTextFieldButton.addTarget(self, action: #selector(didSearch), for: .touchUpInside)
+        searchController.searchBar.searchTextField.rightView = rightTextFieldButton
+        searchController.searchBar.searchTextField.rightViewMode = .always
+        searchController.searchBar.setNeedsLayout()
+        self.navigationItem.searchController = searchController
+    }
+    
+    @objc fileprivate func didSearch() {
+        if let text = searchController.searchBar.text {
+            viewModel.loadRestaurants(for: text)
+        }
     }
     
     
@@ -151,37 +190,22 @@ extension RootViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let restaurant = viewModel.restaurants[indexPath.row]
-        cell.restaurantView.nameLabel.text = restaurant.name
-        cell.restaurantView.priceLabel.text = restaurant.formattedPrice
-        cell.restaurantView.descriptionLabel.text = restaurant.address
-        
-        for subview in cell.restaurantView.ratingView.arrangedSubviews {
-            cell.restaurantView.ratingView.removeArrangedSubview(subview)
+        cell.restaurantView.configure(for: restaurant, hasHalfRating: viewModel.hasHalfRating(restaurant: restaurant))
+        cell.selectionStyle = .none
+        viewModel.loadRestarauntImage(for: restaurant) { image in
+            if let referenceCell = tableView.cellForRow(at: indexPath) as? RestaurantTableViewCell {
+                referenceCell.restaurantView.imageView.image = image
+            }
         }
-        if let stars = restaurant.rating {
-            for _ in 0...Int(stars) {
-                let image = UIImage(systemName: "star.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
-                cell.restaurantView.ratingView.addArrangedSubview(UIImageView(image: image))
-            }
-            if viewModel.hasHalfRating(restaurant: restaurant) {
-                let image = UIImage(systemName: "star.leadinghalf.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
-                cell.restaurantView.ratingView.addArrangedSubview(UIImageView(image: image))
-            }
-            let starCount = cell.restaurantView.ratingView.arrangedSubviews.count
-            if starCount < 5 {
-                let grayStars: [UIView] = Array(repeating: UIImageView(image: UIImage(systemName: "star.fill")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)), count: 5 - starCount)
-                for star in grayStars {
-                    cell.restaurantView.ratingView.addArrangedSubview(star)
-                }
-            }
-            
-        }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.restaurants.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
@@ -205,6 +229,8 @@ extension RootViewController: MKMapViewDelegate {
             pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
         }
         pin.image = UIImage(named: "staticPin")
+        pin.canShowCallout = true
+        
         return pin
     }
     
@@ -235,4 +261,29 @@ extension RootViewController: CLLocationManagerDelegate {
 
 protocol ChildViewController: UIViewController {
     func reloadData()
+}
+
+extension UIViewController {
+    func getTitleView() -> UIView {
+        let imageView = UIImageView(image: UIImage(named:"Logo"))
+        let titleLabel = UILabel()
+        
+        let boldTitle = Constants.Strings.titleBold
+        let boldAttrs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22),
+                                                         NSAttributedString.Key.foregroundColor: UIColor(named: "BoldTitleGray") ?? .darkGray]
+        let boldString = NSAttributedString(string: boldTitle, attributes: boldAttrs )
+        
+        let grayTitle = Constants.Strings.titleGray
+        let grayAttrs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold),
+                                                         NSAttributedString.Key.foregroundColor: UIColor(named: "LightTitleGray") ?? .systemGray4]
+        let grayString = NSAttributedString(string: grayTitle, attributes: grayAttrs)
+        
+        let titleString = NSMutableAttributedString(attributedString: boldString)
+        titleString.append(grayString)
+        titleLabel.attributedText = titleString
+        
+        let stack = UIStackView(arrangedSubviews: [imageView, titleLabel])
+        stack.axis = .horizontal
+        return stack
+    }
 }

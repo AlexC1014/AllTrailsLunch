@@ -7,11 +7,13 @@
 
 import CoreLocation
 import Foundation
+import UIKit
 
 protocol RestaurantListViewModelProtocol {
     func loadNearbyRestauants()
     func loadRestaurants(for search: String)
     func hasHalfRating(restaurant: Restaurant) -> Bool
+    func loadRestarauntImage(for restaurant: Restaurant, completion: @escaping (UIImage?) -> Void)
     
     var restaurants: [Restaurant] { get }
     var location: CLLocation { get set }
@@ -57,10 +59,26 @@ class RestaurantListViewModel: RestaurantListViewModelProtocol {
         //<#code#>
     }
     
+    func loadRestarauntImage(for restaurant: Restaurant, completion: @escaping (UIImage?) -> Void) {
+        guard let ref = restaurant.photos?.first?.photoReference else {
+            completion(nil)
+            return
+        }
+        NetworkManager.shared.downloadImage(reference: ref) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(_):
+                    completion(nil)
+                case .success(let image):
+                    completion(image)
+                }
+            }
+
+        }
+    }
+    
     func hasHalfRating(restaurant: Restaurant) -> Bool {
         guard let rating = restaurant.rating else { return false }
         return rating.truncatingRemainder(dividingBy: 1) >= Constants.Values.minimumHalfStarRating
     }
-    
-    
 }

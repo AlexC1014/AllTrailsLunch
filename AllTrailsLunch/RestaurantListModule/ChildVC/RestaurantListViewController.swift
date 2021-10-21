@@ -27,7 +27,8 @@ class RestaurantListViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         registerTableView()
-        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
     }
     
     override func viewDidLayoutSubviews() {

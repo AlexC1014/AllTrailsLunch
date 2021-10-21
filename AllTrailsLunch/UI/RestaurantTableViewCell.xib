@@ -17,22 +17,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-Eu-UFq" userLabel="ContainerView">
-                        <rect key="frame" x="10" y="10" width="394" height="107"/>
+                        <rect key="frame" x="20" y="10" width="374" height="117"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FV1-kj-3eh">
-                                <rect key="frame" x="363.5" y="9.5" width="20.5" height="17.5"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5af-aS-lZY" customClass="RestaurantView" customModule="AllTrailsLunch" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="347.5" height="91"/>
+                                <rect key="frame" x="8" y="8" width="327.5" height="101"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FV1-kj-3eh">
+                                <rect key="frame" x="343.5" y="17.5" width="20.5" height="17.5"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5af-aS-lZY" firstAttribute="leading" secondItem="Qcw-Eu-UFq" secondAttribute="leading" constant="8" id="5Ic-MW-h5S"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FV1-kj-3eh" secondAttribute="bottom" constant="44" id="JDR-BW-PDB"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FV1-kj-3eh" secondAttribute="bottom" constant="8" id="JDR-BW-PDB"/>
                             <constraint firstAttribute="trailing" secondItem="FV1-kj-3eh" secondAttribute="trailing" constant="10" id="M4d-Rw-yDW"/>
-                            <constraint firstItem="FV1-kj-3eh" firstAttribute="top" secondItem="Qcw-Eu-UFq" secondAttribute="top" constant="8" id="Nsx-hi-UJ7"/>
+                            <constraint firstItem="FV1-kj-3eh" firstAttribute="top" secondItem="Qcw-Eu-UFq" secondAttribute="top" constant="16" id="Nsx-hi-UJ7"/>
                             <constraint firstItem="FV1-kj-3eh" firstAttribute="leading" secondItem="5af-aS-lZY" secondAttribute="trailing" constant="8" id="haQ-XU-kjS"/>
                             <constraint firstItem="5af-aS-lZY" firstAttribute="top" secondItem="Qcw-Eu-UFq" secondAttribute="top" constant="8" id="sfO-wp-x2C"/>
                             <constraint firstAttribute="bottom" secondItem="5af-aS-lZY" secondAttribute="bottom" constant="8" id="uTZ-mz-SM8"/>
@@ -41,14 +42,15 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Qcw-Eu-UFq" firstAttribute="leading" secondItem="BXE-h5-Djn" secondAttribute="leading" constant="10" id="OOS-QN-hrB"/>
+                    <constraint firstItem="Qcw-Eu-UFq" firstAttribute="leading" secondItem="BXE-h5-Djn" secondAttribute="leading" constant="20" id="OOS-QN-hrB"/>
                     <constraint firstItem="Qcw-Eu-UFq" firstAttribute="top" secondItem="BXE-h5-Djn" secondAttribute="top" constant="10" id="Scy-Iz-PvB"/>
-                    <constraint firstAttribute="trailing" secondItem="Qcw-Eu-UFq" secondAttribute="trailing" constant="10" id="mSL-HB-Imf"/>
-                    <constraint firstAttribute="bottom" secondItem="Qcw-Eu-UFq" secondAttribute="bottom" constant="10" id="sh8-E2-anf"/>
+                    <constraint firstAttribute="trailing" secondItem="Qcw-Eu-UFq" secondAttribute="trailing" constant="20" id="mSL-HB-Imf"/>
+                    <constraint firstAttribute="bottom" secondItem="Qcw-Eu-UFq" secondAttribute="bottom" id="sh8-E2-anf"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="containerView" destination="Qcw-Eu-UFq" id="ZyA-wT-1l5"/>
                 <outlet property="favoriteIcon" destination="FV1-kj-3eh" id="QIA-su-qwn"/>
                 <outlet property="restaurantView" destination="5af-aS-lZY" id="20u-gL-s2D"/>
             </connections>

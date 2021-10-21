@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553E3272272206A5008FEE61 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E3271272206A5008FEE61 /* SearchRequest.swift */; };
 		55E36AB5271E47A900F996E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36AB4271E47A900F996E6 /* AppDelegate.swift */; };
 		55E36AB7271E47A900F996E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36AB6271E47A900F996E6 /* SceneDelegate.swift */; };
 		55E36AB9271E47A900F996E6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E36AB8271E47A900F996E6 /* RootViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		553E3271272206A5008FEE61 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		55C17F732720E26E0020B216 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		55C17F742720EC300020B216 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		55E36AB1271E47A900F996E6 /* AllTrailsLunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllTrailsLunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				55E36AFE271F9A5F00F996E6 /* NearbyRestaurantRequest.swift */,
+				553E3271272206A5008FEE61 /* SearchRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				55E36AB5271E47A900F996E6 /* AppDelegate.swift in Sources */,
 				55E36AEE271F894400F996E6 /* RestaurantView.swift in Sources */,
 				55E36AB7271E47A900F996E6 /* SceneDelegate.swift in Sources */,
+				553E3272272206A5008FEE61 /* SearchRequest.swift in Sources */,
 				55E36AFF271F9A5F00F996E6 /* NearbyRestaurantRequest.swift in Sources */,
 				55E36AFC271F990C00F996E6 /* Constants.swift in Sources */,
 			);
