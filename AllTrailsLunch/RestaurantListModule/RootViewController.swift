@@ -51,6 +51,9 @@ class RootViewController: UIViewController {
         
         toggleViewButton.addTarget(self, action: #selector(toggleView), for: .touchUpInside)
         toggleViewButton.layer.cornerRadius = 8
+        toggleViewButton.layer.shadowColor = UIColor.label.cgColor
+        toggleViewButton.layer.shadowOpacity = 0.1
+        toggleViewButton.layer.shadowRadius = 4
         addSearchBar()
         
         locationManager.delegate = self
